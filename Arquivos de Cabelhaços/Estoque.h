@@ -22,13 +22,13 @@ class Estoque{
 	    	// destrutor 
 	    	~Estoque();
 	    	// metodos para inserir Livro
-	    	string inserirLivro(Livro);
+	    	bool inserirLivro(Livro);
 	    	
 	    	// metodo para imprime Livro
 	    	void imprimeLivro() const;
 	    	
 	    	// metodo para remover Livro
-	    	long int removerLivro(long int);
+	    	bool removerLivro(long int);
 	    	
 	    	// MÉTODO PARA PESQUISAR LIVROS PELO NOME OU CÓDIGO DE BARRAS
 	    	bool pesquisarLivro(string) const;
