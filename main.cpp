@@ -38,7 +38,7 @@ int main(){
     livrouni.setCodigo(codigo);
     livrouni.setPreco(preco);
     livrouni.setQuantidade(quantidade);
-	
+	cout << "Livro:" << endl;
 	livrouni.imprimeQuantidade();
 
 	return 0;
