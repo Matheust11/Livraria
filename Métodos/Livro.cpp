@@ -2,9 +2,8 @@
 
 
 
-Livro::Livro(string titulo, string genero, unsigned int codigo, float preco){
+Livro::Livro(string titulo, unsigned int codigo, float preco){
     setTitulo(titulo);
-    setGenero(genero);
     setCodigo(codigo);
     setPreco(preco);
 }
@@ -16,15 +15,6 @@ void Livro::setTitulo(string titulo)
 
 string Livro::getTitulo() const{
     return titulo;
-}
-
-void Livro::setGenero(string genero)
-{
-	this -> genero = genero;
-}
-
-string Livro::getGenero() const{
-    return genero;
 }
 
 void Livro::setCodigo(unsigned int codigo)
@@ -47,7 +37,6 @@ float Livro::getPreco() const{
 
 void Livro::imprime()const{
     cout << "Titulo: " << getTitulo() << endl;
-    cout << "Genero: " << getGenero() << endl;
-    cout << "COdigo: " << getCodigo() << endl;
+    cout << "Codigo: " << getCodigo() << endl;
     cout << "Preco: "  << getPreco()  << endl;
 }

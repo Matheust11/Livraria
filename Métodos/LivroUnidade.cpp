@@ -2,7 +2,7 @@
 
 
 
-LivroUnidade::LivroUnidade(string titulo, string genero, unsigned int codigo, float preco, int quantidade): Livro (titulo, genero, codigo, preco){
+LivroUnidade::LivroUnidade(string titulo, unsigned int codigo, float preco, int quantidade): Livro (titulo, codigo, preco){
     setQuantidade(quantidade);
 }
 

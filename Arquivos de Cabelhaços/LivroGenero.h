@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+
 #include "Livro.h"
 
 using std::cout;
@@ -13,10 +14,10 @@ class LivroGenero: public Livro{
     private:
 	    string genero;
     public:
-        LivroGenero(string = " ", string = " ", unsigned int = 0, float = 0.0, string = " ");
+        LivroGenero(string = " ", unsigned int = 0, float = 0.0, string = " ");
 
-        void setGenero(int);
-        int getGenero() const;
+        void setGenero(string);
+        string getGenero() const;
 	
 	    void imprimeGenero()const;
 };

@@ -6,7 +6,7 @@ using namespace std;
 
 #include "/home/matheus/Livraria/Métodos/Livro.cpp"
 #include "/home/matheus/Livraria/Métodos/LivroUnidade.cpp"
-
+#include "/home/matheus/Livraria/Métodos/LivroGenero.cpp"
 
 // Programa Principal
 int main(){
@@ -15,6 +15,7 @@ int main(){
     
     Livro livro;
     LivroUnidade livrouni;
+    LivroGenero livrogen;
 
     string titulo, genero;
     unsigned int codigo;
@@ -30,16 +31,15 @@ int main(){
 	cin >> codigo;
     cout << "Preço: ";
     cin >> preco;
-    cout << "Quantidade: ";
-    cin >> quantidade;
+    
 
-	livrouni.setTitulo(titulo);
-    livrouni.setGenero(genero);
-    livrouni.setCodigo(codigo);
-    livrouni.setPreco(preco);
-    livrouni.setQuantidade(quantidade);
+	livrogen.setTitulo(titulo);
+    livrogen.setGenero(genero);
+    livrogen.setCodigo(codigo);
+    livrogen.setPreco(preco);
+   
 	cout << "Livro:" << endl;
-	livrouni.imprimeQuantidade();
+	livrogen.imprimeGenero();
 
 	return 0;
 }

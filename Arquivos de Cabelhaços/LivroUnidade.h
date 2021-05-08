@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <string>
+
 #include "Livro.h"
 
 using std::cout;
