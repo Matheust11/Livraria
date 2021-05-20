@@ -4,19 +4,28 @@
 #include "Estoque.h"
 
 
-class Venda: public Estoque{
+class Vendas: public Estoque{
     private: 
     	float faturamento;
     	float saldo;
-    	void adicionarFaturamento(float);
-    	void adicionarSaldo(float);
+
+		vector <Livro> livro_nota;
+
+    	
     public:
     	Vendas(void);
     	~Vendas(void);
+
+		void setFaturamento(float);
+    	void setSaldo(float);
     	
     	float getFaturamento(void) const;
     	float getSaldo(void) const;
-        
+
+		void inserirNotaLivro(Livro);
+
+        void Notafiscal(void);
+		void limpaCarrinho(void);
 };
 
 #endif
