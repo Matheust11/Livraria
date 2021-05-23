@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Vendas::Vendas(void)
+Vendas::Vendas()
 {
 	float f;
 	
@@ -22,7 +22,7 @@ Vendas::Vendas(void)
     myfile2.close();
 }
 
-Vendas::~Vendas(void)
+Vendas::~Vendas()
 {
 	ofstream myfile1;
 	myfile1.open("/home/matheus/Livraria/Financeiro/faturamento.txt", std::ofstream::out | std::ofstream::trunc);
@@ -46,22 +46,26 @@ Vendas::~Vendas(void)
 void Vendas::setFaturamento(float faturamento)
 {
 	this->faturamento+=(faturamento>0)?faturamento:0;
-
-	return; 
 }
 
 void Vendas::setSaldo(float saldo)
 {
 	this->saldo+=(saldo>0)?saldo:0; 
-
-	return;
 }
 
 void Vendas::inserirNotaLivro(Livro aux){
 	
 	livro_nota.push_back(aux);
+}
+
+void Vendas::inserirNotaLivroGenero(LivroGenero aux_lgen){
 	
-	return;
+	lgen_nota.push_back(aux_lgen);
+}
+
+void Vendas::inserirNotaLivroAutor(LivroAutor aux_laut){
+	
+	laut_nota.push_back(aux_laut);
 }
 
 void Vendas::Notafiscal(void)
@@ -75,9 +79,21 @@ void Vendas::Notafiscal(void)
 			myfile << "=== Nota Fiscal da Livraria ===" <<endl<<endl;
 			for(unsigned i(0); i < livro_nota.size(); i++)
 			{
-				myfile << "Nome do Livro: " << livro_nota[i].getTitulo() << endl;
-				myfile << "Preço do Livro: " << livro_nota[i].getPrecoConsumidor() << " R$" << endl;
-				myfile << "Código de Barras: " << livro_nota[i].getCodigo() << endl;
+				myfile << "Nome do Livro: " << livro_nota[i].getTitulo();
+				myfile << " / Preço do Livro: R$" << livro_nota[i].getPrecoConsumidor();
+				myfile << " / Código de Barras: " << livro_nota[i].getCodigo();
+			}
+			for(unsigned i(0); i < lgen_nota.size(); i++)
+			{
+				myfile << "Nome do Livro: " << lgen_nota[i].getTitulo();
+				myfile << " / Preço do Produto: R$" << lgen_nota[i].getPrecoConsumidor();
+				myfile << " / Código de Barras: " << lgen_nota[i].getCodigo() << endl;
+			}
+			for(unsigned i(0); i < laut_nota.size(); i++)
+			{
+				myfile << "Nome do Livro: " << laut_nota[i].getTitulo();
+				myfile << " / Preço do Produto: R$" << laut_nota[i].getPrecoConsumidor();
+				myfile << " / Código de Barras: " << laut_nota[i].getCodigo() << endl;
 			}
 			myfile << endl;
 			myfile.close();
@@ -89,18 +105,52 @@ void Vendas::Notafiscal(void)
 			setSaldo(livro_nota[i].getPrecoConsumidor());
 			setFaturamento(livro_nota[i].getPrecoConsumidor() - livro_nota[i].getPrecoFabrica());
 		}
+		for(unsigned i(0); i < laut_nota.size(); i++)
+		{
+			setSaldo(laut_nota[i].getPrecoConsumidor());
+			setFaturamento(laut_nota[i].getPrecoConsumidor() - laut_nota[i].getPrecoFabrica());
+		}
+		for(unsigned i(0); i < lgen_nota.size(); i++)
+		{
+			setSaldo(lgen_nota[i].getPrecoConsumidor());
+			setFaturamento(lgen_nota[i].getPrecoConsumidor() - lgen_nota[i].getPrecoFabrica());
+		}
+		
 		
 	limpaCarrinho();
-
-	return;
-
 }
-
+/* 
+void Vendas::fecharCaixa(void)
+{
+	faturamento = 0;
+	saldo = 0;
+	
+	ofstream myfile1;
+	myfile1.open("/home/matheus/Livraria/Financeiro/faturamento.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile1.is_open())
+	{
+		myfile1 << faturamento;
+		myfile1.close();
+	}
+	else cout << "Não foi possível abrir o arquivo.";
+	
+	ofstream myfile2;
+	myfile2.open("/home/matheus/Livraria/Financeiro/saldo.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile2.is_open())
+	{
+		myfile2 << saldo;
+		myfile2.close();
+	}
+	else cout << "Não foi possível abrir o arquivo.";
+	
+	return;
+}
+ */
 void Vendas::limpaCarrinho(void)
 {
 	livro_nota.clear();
-	
-	return;
+	lgen_nota.clear();
+	laut_nota.clear();
 } 
 
 float Vendas::getFaturamento(void) const{

@@ -13,6 +13,8 @@ using std::string;
 using std::ofstream;
 using std::ifstream;
 
+using namespace std;
+
 class Livro{
     private:
 		string titulo;
@@ -20,7 +22,6 @@ class Livro{
 		float precofabrica;
 		float precoconsumidor;
 		int quantidade;
-
     public:
         //Livro( string = " ", unsigned int = 0, float = 0.0);
 		Livro( string = " ", unsigned int = 0, float = 0.0,float = 0.0, int = 0);
@@ -29,8 +30,7 @@ class Livro{
         string getTitulo() const;
 		void setCodigo(unsigned int);
     	unsigned int getCodigo() const;
-    	//void setPreco(float);
-		//float getPreco() const;
+    	
 		// metodo que configura o atributo associado ao preco de aquisicao do produto
 		void setPrecoFabrica(float);
 		float getPrecoFabrica() const;

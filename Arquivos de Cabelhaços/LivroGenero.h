@@ -6,15 +6,11 @@
 
 #include "Livro.h"
 
-using std::cout;
-using std::endl;
-using std::string;
-
 class LivroGenero: public Livro{
     private:
 	    string genero;
     public:
-        LivroGenero(string = " ", unsigned int = 0, float = 0.0, string = " ");
+        LivroGenero(string = " ", unsigned int = 0, float = 0.0,float = 0.0, int = 0, string = " ");
 
         void setGenero(string);
         string getGenero() const;

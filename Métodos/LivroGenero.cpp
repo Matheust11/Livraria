@@ -2,7 +2,7 @@
 
 
 
-LivroGenero::LivroGenero(string titulo, unsigned int codigo, float preco, string genero): Livro (titulo, codigo, preco){
+LivroGenero::LivroGenero(string titulo, unsigned int codigo, float precofabrica,float precoconsumidor, int quantidade, string genero): Livro (titulo, codigo, precofabrica, precoconsumidor, quantidade){
     setGenero(genero);
 }
 
@@ -17,5 +17,5 @@ string LivroGenero::getGenero() const{
 
 void LivroGenero::imprimeGenero()const{
     imprime();
-    cout << "Genero: " << getGenero() << endl;
+    cout << "Gênero: " << getGenero() << endl;
 }
