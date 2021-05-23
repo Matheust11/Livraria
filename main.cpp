@@ -107,9 +107,54 @@ int MenuVendas(){
     return op;
 }
 
+void Inicial ()
+{
+
+    cout<<"\n"<<endl;
+
+    cout<<"\n     -------  -------   -         --------  -------   -------            -------"
+        <<"\n    /        /      /  / |     /     /     /      /  /      /  /        /"
+        <<"\n   /        /      /  /  |    /     /     /      /  /      /  /        /"
+        <<"\n  /        /      /  /   |   /     /     /______/  /      /  /        /----"
+        <<"\n /        /      /  /    |  /     /     /   |     /      /  /        /"
+        <<"\n/        /      /  /     | /     /     /    |    /      /  /        /"
+        <<"\n-------  -------  /      |/     /     /     |    ------    -------  -------";
+    cout<<"\n"<<endl;
+
+    cout<<"\n\t\t\t   ----------  -------"
+        <<"\n\t\t\t      /     / /"
+        <<"\n\t\t\t     /     / /"
+        <<"\n\t\t\t    /     / /---"
+        <<"\n\t\t\t   /     / /"
+        <<"\n\t\t\t  /     / /"
+        <<"\n\t\t\t--------  -------";
+    cout<<"\n"<<endl;
+
+    cout<<"\n     -------  -------  ---------  ---------   ---------               -------"
+        <<"\n    /        /            /      /        /  /        /  /        /  /"
+        <<"\n   /        /            /      /        /  /        /  /        /  /"
+        <<"\n  /---      -------     /      /        /  /        /  /        /  /----"
+        <<"\n /                /    /      /        /  /  ___   /  /        /  /"
+        <<"\n/                /    /      /        /  /  /   | /  /        /  /"
+        <<"\n-------  -------     /       --------   --------|-   --------    -------";
+
+    cout<<"\n"<<endl;
+
+    system("read -p 'Pressione Enter para continuar...' var");
+	system("clear");
+
+}
+
+
 // Programa Principal
 int main(){
 	
+	 //FUNDO TELA BRANCA
+    //system("color F0");
+
+    //MENSAGEM TELA INICIAL
+    Inicial();
+
 	setlocale(LC_ALL, "Portuguese");
 
    	Livro l;
@@ -898,92 +943,20 @@ int main(){
 					{
 						case 1:
 						{
-							cout << "=== ESCOLHA O TIPO DE ORDENAÇÃO === :" << endl << endl;
-							cout << "1 - Ordenar por título do Livro" << endl;
-							
-							cout << "Opção: ";
-							cin >> escolha;
-							while(cin.fail())
-							{
-								cout << "Entrada inválida. Tente novamente." << endl;
-								cin.clear();
-								cin.ignore(256,'\n');  
-								cin >> escolha;
-							}
-
-							cout << endl;
-							system("read -p 'Pressione Enter para continuar...' var");
-							system("clear");
-							
-							switch(escolha)
-							{
-								case 1:
-								{
-									estoque.ordenaLivrosNomeGenero();
-									estoque.imprimeLivroGenero();
-									break;
-								}
-							}
-							break;
+							estoque.ordenaLivrosNomeGenero();
+							estoque.imprimeLivroGenero();
+							break;	
 						}
 						case 2:
 						{
-							cout << "=== ESCOLHA O TIPO DE ORDENAÇÃO === :" << endl << endl;
-							cout << "1 - Ordenar por título do Livro" << endl;
-							
-							cout << "Opção: ";
-							cin >> escolha;
-							while(cin.fail())
-							{
-								cout << "Entrada inválida. Tente novamente." << endl;
-								cin.clear();
-								cin.ignore(256,'\n');  
-								cin >> escolha;
-							}
-
-							cout << endl;
-							system("read -p 'Pressione Enter para continuar...' var");
-							system("clear");
-							
-							switch(escolha)
-							{
-								case 1:
-								{
-									estoque.ordenaLivrosNomeAutor();
-									estoque.imprimeLivroAutor();
-									break;
-								}
-							}
+							estoque.ordenaLivrosNomeAutor();
+							estoque.imprimeLivroAutor();
 							break;
 						}
 						case 3:
 						{
-							cout << "=== ESCOLHA O TIPO DE ORDENAÇÃO === :" << endl << endl;
-							cout << "1 - Ordenar por título do Livro" << endl;
-							
-							cout << "Opção: ";
-							cin >> escolha;
-							while(cin.fail())
-							{
-								cout << "Entrada inválida. Tente novamente." << endl;
-								cin.clear();
-								cin.ignore(256,'\n');  
-								cin >> escolha;
-							}
-
-							cout << endl;
-							system("read -p 'Pressione Enter para continuar...' var");
-							system("clear");
-							
-							switch(escolha)
-							{
-								case 1:
-								{
-									estoque.ordenaLivrosNome();
-									estoque.imprimeLivro();
-									break;
-								}
-							}
+							estoque.ordenaLivrosNome();
+							estoque.imprimeLivro();
 							break;
 						}
 					}
@@ -1219,6 +1192,5 @@ int main(){
 				}			
 			}
 		}
-
 return 0;
 }

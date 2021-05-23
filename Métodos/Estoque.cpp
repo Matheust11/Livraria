@@ -606,15 +606,15 @@ float Estoque::getDespesas() const
 
 	for(unsigned i(0); i < lista_livros.size(); i++)
 	{
-		despesas += lista_livros[i].getPrecoConsumidor() * float(lista_livros[i].getQuantidade());
+		despesas += lista_livros[i].getPrecoFabrica() * float(lista_livros[i].getQuantidade());
 	}
 	for(unsigned i(0); i < lista_autor.size(); i++)
 	{
-		despesas += lista_autor[i].getPrecoConsumidor() * float(lista_autor[i].getQuantidade());
+		despesas += lista_autor[i].getPrecoFabrica() * float(lista_autor[i].getQuantidade());
 	}
 	for(unsigned i(0); i < lista_genero.size(); i++)
 	{
-		despesas += lista_genero[i].getPrecoConsumidor() * float(lista_genero[i].getQuantidade());
+		despesas += lista_genero[i].getPrecoFabrica() * float(lista_genero[i].getQuantidade());
 	}
 
 	return despesas;
