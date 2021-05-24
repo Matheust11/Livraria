@@ -149,8 +149,6 @@ void Inicial ()
 // Programa Principal
 int main(){
 	
-	 //FUNDO TELA BRANCA
-    //system("color F0");
 
     //MENSAGEM TELA INICIAL
     Inicial();
